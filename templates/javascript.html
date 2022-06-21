@@ -1,0 +1,25 @@
+<!DOCTYPE html >
+<html>
+<head>
+  {% include 'header.html' %}
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+</head>
+<body>
+  <section class="hero is-success">
+    <div class="hero-body">
+      <p class="title">
+        We need to find the coordiantes<br>
+      </p>
+      <p class="subtitle">
+        The messages from our fleets are delayed!
+      </p>
+    </div>
+  </section>
+  <br/>
+  <div id="container" class="container">
+  </div>
+</body>
+<footer>
+  <script src="/static/js/delay_token.js"></script>
+</footer>
+</html>

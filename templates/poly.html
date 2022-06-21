@@ -1,0 +1,43 @@
+<!DOCTYPE html >
+<html>
+<head>
+  {% include 'header.html' %}
+</head>
+<body>
+  <section class="hero is-info">
+    <div class="hero-body">
+      <p class="title">
+        This message is encrypted!<br>
+      </p>
+      <p class="subtitle">
+        We need to find what data is saying!
+      </p>
+    </div>
+  </section>
+    <div class="container">
+    <div class="box">
+     <p><b>Note:</b> Any number in the URL after <code>/poly/</code> will generate a new message. Once the message is used that index is expired for everyone. Example <code>/poly/1</code> is the first encrypted message.</code></p>
+     <p><b>Hint:</b> Learn to use the parameters in the endpoint associated with the data. Use <code>page</code>!</p>
+     <p><b>Hint:</b> Decryption is not actually necessary.... but plotting is.</p>
+      <a target="_blank" href="/poly/{{number}}?page=1"><button class="button">See Data</button></a>
+    </div>
+    <br>
+    <div class="box">
+        <form action="/five" method="POST">
+            <div class="field">
+                <label class="label">Index (The message's number)</label>
+                <input class="input" type="number" name="index">
+            </div>
+            <div class="field">
+                <label class="label">Answer (What does the message represent?)</label>
+                <input class="input" type="number" name="answer">
+            </div>
+            <div class="field">
+                <label class="label">You can only do this once per index! This will make the message expire!</label>
+                <input class="input" type="submit" name="submit" value="Submit Answer">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

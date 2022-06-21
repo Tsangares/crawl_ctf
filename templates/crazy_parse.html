@@ -1,0 +1,34 @@
+<!DOCTYPE html >
+<html>
+<head>
+  {% include 'header.html' %}
+</head>
+<body>
+  <section class="hero is-link">
+    <div class="hero-body">
+      <p class="title">
+        Communications
+      </p>
+      <p class="subtitle">
+        The data between our carriers seems to be corrupted!<br>
+	The message is in here... somewhere...
+    </div>
+  </section>
+  <div class="block"></div>
+  <table>
+    {% for j in range(size[1]) %}
+    <tr>
+	{% for i in range(size[0]) %}
+	{% if i==col %}
+	<td style="background-color: yellow; padding: .05rem; cursor: crosshair">	
+	  {% else %}      
+	<td style="background-color: white; padding: .05rem;; cursor: auto;">
+	{% endif %}
+	  <progress id="item-{{index[i][j]}}" style="background-color: {{color[i][j]}};" class="progress is-small" value="{{data[i][j]}}" max="100">{{data[i][j]}}</progress>
+	</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

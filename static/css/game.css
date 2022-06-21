@@ -1,0 +1,43 @@
+.game-container{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+.fields{
+    display: flex;
+    justify-content: space-evenly;
+}
+.fields>*{
+    margin: .5rem;
+}
+.friends{
+    width: 100%;
+    height: inherit;
+    background-color: rgba(0,0,0,.1);
+    flex-direction: column;
+    display: flex;
+    overflow-y: scroll;
+}
+.friends>*{
+    padding: .5rem;
+}
+.friends>span{
+    padding: .5rem;
+    margin: .2rem;
+    transition: all linear .2s;
+    border-radius: .5rem;;
+}
+.friend{
+    background: rgba(0,0,0,.1);
+}
+.user{
+    font-weight: bold;
+}
+.friend:hover{
+    background-color: rgba(50,0,0,.2);
+    cursor: pointer;
+}
+.friend:active{
+    background-color: rgba(100,100,100,.2);
+    cursor: pointer;
+}

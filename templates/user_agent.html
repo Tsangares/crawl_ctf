@@ -1,0 +1,29 @@
+<!DOCTYPE html >
+<html>
+<head>
+  {% include 'header.html' %}
+</head>
+<body>
+  <section class="hero is-danger">
+    <div class="hero-body">
+      <p class="title">
+        We have logged your request!<br>
+	IP: {{ip_address}}<br>
+        User-Agent: {{agent}}
+      </p>
+      <p class="subtitle">
+        We only offer one per person!
+      </p>
+    </div>
+  </section>
+  <div class="level">
+    <div class="level-item">
+      <div class="card">
+        <div class="card-content">
+          <label class="title">{{token}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

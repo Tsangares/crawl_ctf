@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html>
+<head>
+  {% include 'header.html' %}
+</head>
+<body>
+  <section class="hero is-info">
+    <div class="hero-body">
+      <p class="title">
+        Welcome Professor
+      </p>
+      <p class="subtitle">
+        There is an emegency with are communications,<br>
+        You are the only that can help us!
+      </p>
+    </div>
+  </section>
+  <div class="block"></div>
+  <div class="level">
+    <div class="level-item">
+      <div class="card">
+      	<form action="/" method="post">
+          <div class="card-content">
+	    {% include 'login.html' %}
+            <div class="field">
+              <label class="label">What is your name?</label>
+              <input class="input" name="name"/>
+            </div>
+            <div class="field">
+              <a href="/">
+		<button type="submit" class="button is-danger">Help them</button>
+              </a>
+            </div>
+          </div>
+      	</form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

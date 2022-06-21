@@ -1,0 +1,23 @@
+List items commonly used in crawling, make an endpoint for each one that contributes to a game.
+ -> User agent
+ - Captcha
+ - Headless
+ - Canvas fingerprinting
+ - Throtttling
+ - json parsing
+ - paging
+ - html parsing
+ - api access
+ - url encoded parameters
+ - Using the network page to find resources
+ - time delay for bot capturing
+ - mongodb database ? (too much)
+
+ Things in game this can create:
+  - Ship count
+  - Damage communications
+  - Decrypt communications
+  - Create ships
+  - Initiate battle
+  - Create ammunition
+  - Capture regions
