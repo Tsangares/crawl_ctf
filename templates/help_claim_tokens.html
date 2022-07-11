@@ -17,7 +17,12 @@
   <div class="block"></div>
   <p>Use the url above, send a get request to it with the fields <code>id</code> for the user id and <code>flag</code> for the flag you found. The response will return <code>success: true</code> if the flag is valid.</p>
 
-  <p>Example url: <code>https://domain.com/claim?id=62b103dd1fe62ccca6027ed8&flag=46892420854573</code></p>
+  <p>Example url: <code>https://ctf.gradstudent.me/claim?id=62b103dd1fe62ccca6027ed8&flag=46892420854573</code></p>
   <p>HINT: The requests library use a get request <code>requests.get(url,params=params)</code> pass params as <code>dict</code> with the <code>id</code> and <code>flag</code> set.</p>
+
+  <br>
+  {% if active %}
+  <span>Your ID is: <code>{{user['_id']}}</code>
+    {% endif %}
 </body>
 </html>

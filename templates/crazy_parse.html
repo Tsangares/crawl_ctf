@@ -15,7 +15,7 @@
     </div>
   </section>
   <div class="block"></div>
-  <table>
+  <table id="crazy-parse">
     {% for j in range(size[1]) %}
     <tr>
 	{% for i in range(size[0]) %}
@@ -24,7 +24,7 @@
 	  {% else %}      
 	<td style="background-color: white; padding: .05rem;; cursor: auto;">
 	{% endif %}
-	  <progress id="item-{{index[i][j]}}" style="background-color: {{color[i][j]}};" class="progress is-small" value="{{data[i][j]}}" max="100">{{data[i][j]}}</progress>
+	  <progress id="item-{{index[i][j]}}" style="background-color: {{color[i][j]}};" class="progress" value="{{data[i][j]}}" max="100">{{data[i][j]}}%</progress>
 	</td>
       {% endfor %}
     </tr>

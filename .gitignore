@@ -1,6 +1,8 @@
 *~
 config.json
+credentials.json
 __pycache__
 notes.text
 env/
 .vscode/
+crawl_ctf.service

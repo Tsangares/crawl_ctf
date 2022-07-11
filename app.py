@@ -17,7 +17,7 @@ from supertokens_python.recipe.passwordless import ContactEmailOnlyConfig, Creat
 
 app = Flask(__name__)
 config = json.load(open('config.json'))
-app.secret_key = 'xrP8YWBt6iPL4W83vgpymSFyJyAycWtkO'
+app.secret_key = config['secret']
 app.config["MONGO_URI"] = f"mongodb://{config['user']}:{config['pass']}@{config['domain']}/ctf"
 mongo = PyMongo(app)
 socketio = SocketIO(app)
@@ -271,6 +271,10 @@ def user_agent():
     add_flag(token, 'user_agent')
     return render_template('user_agent.html',agent=agent,token=token,ip_address=ip_address)
 
+@app.route('/user',methods=['GET'])
+@flask_login.login_required
+def get_user_id():
+    return str(current_user.data['_id'])
 
 @app.route('/home',methods=['GET'])
 @flask_login.login_required
@@ -295,7 +299,12 @@ def claim_flag_endpoint():
     _id = request.args.get('id',None)
     flag = request.args.get('flag',None)
     if _id is None and flag is None:
-        return render_template('help_claim_tokens.html')
+        active = False
+        user = None
+        if current_user.is_active:
+            active = True
+            user = current_user.data
+        return render_template('help_claim_tokens.html',user=user,active=active)
     elif _id is None or flag is None:
         return {'success': False, 'error': "Missing id or flag param."}
     else:

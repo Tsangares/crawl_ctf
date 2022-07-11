@@ -2,8 +2,8 @@
 Description=Crawling capture the flag interface.
 
 [Service]
-WorkingDirectory=/home/wil/desktop/crawl_ctf
-ExecStart=/home/wil/desktop/crawl_ctf/env/bin/python app.py
+WorkingDirectory=/opt/crawl_ctf
+ExecStart=/opt/crawl_ctf/env/bin/python app.py
 RestartSec=3s
 Restart=always
 
