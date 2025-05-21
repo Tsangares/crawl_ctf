@@ -1,7 +1,8 @@
 #
 from flask import Flask,render_template,request,send_file,session,redirect
 from flask.sessions import SecureCookieSessionInterface
-from flask_pymongo import PyMongo, ObjectId
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash
 from utils import *
 import json,os,io,random,json,math,hashlib,logging,time
@@ -18,14 +19,15 @@ from supertokens_python.recipe.passwordless import ContactEmailOnlyConfig, Creat
 app = Flask(__name__)
 config = json.load(open('config.json'))
 app.secret_key = config['secret']
-app.config["MONGO_URI"] = f"mongodb://{config['user']}:{config['pass']}@{config['domain']}/ctf"
+app.config["MONGO_URI"] = config['MONGO_URI']
 mongo = PyMongo(app)
 socketio = SocketIO(app)
 session_cookie = SecureCookieSessionInterface().get_signing_serializer(app)
 login_manager = flask_login.LoginManager(app)
+
 limiter = Limiter(
-    app,
-    key_func=get_remote_address,
+    get_remote_address,
+    app=app,
     default_limits=["100 per minute"]
 )
 class User(flask_login.UserMixin):
